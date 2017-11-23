@@ -11,21 +11,21 @@ class XmasClock:
         self.bot = bot
 
     @commands.command()
-    async def xmasclock(self):
+    async def блинблинский(self):
         """Display days left 'til xmas"""
 
         now = datetime.datetime.now()
         today = date(now.year, now.month, now.day)
 
         year = now.year
-        if (now.month == 12 and now.day > 25):
+        if (now.month == 12 and now.day > 31):
             year = now.year + 1
 
-        xmasday = date(year, 12, 25)
+        xmasday = date(2018, 1, 1)
 
         delta = xmasday - today
 
-        await self.bot.say("```" + str(delta.days) + " days left until Xmas!```")
+        await self.bot.say("```до нового года " + str(delta.days) + " дней!```")
 
 
 def setup(bot):
